@@ -8,19 +8,32 @@ export default function Home() {
   const [overview, setOverview] = useState<any>(null);
 
   useEffect(() => {
-    fetch('/api/overview')
-      .then(res => res.json())
-      .then(data => setOverview(data))
-      .catch(err => console.error('Failed to fetch overview:', err));
+    // Mocking data for AI Incubator dashboard
+    const mockOverview = {
+      metrics: {
+        activeSwarms: 5,
+        agentsRunning: 32,
+        securityAuditsPassed: 128,
+        systemHealth: 98
+      },
+      recentActivity: [
+        { id: 1, action: "Security Swarm completed audit on 'Project Alpha'", time: "2 mins ago" },
+        { id: 2, action: "Feature Swarm deployed to staging environment", time: "15 mins ago" },
+        { id: 3, action: "Code Reviewer Agent submitted 3 PR comments", time: "1 hour ago" },
+        { id: 4, action: "Memory vector updated with new auth pattern", time: "3 hours ago" }
+      ]
+    };
+
+    setOverview(mockOverview);
   }, []);
 
   if (!overview) return <div className="p-8">Loading dashboard...</div>;
 
   const stats = [
-    { name: 'Active Agents', value: overview.metrics?.activeAgents || 0, icon: Users, color: 'text-blue-500' },
-    { name: 'Tasks Completed', value: overview.metrics?.tasksCompleted || 0, icon: CheckSquare, color: 'text-green-500' },
-    { name: 'Memory Vectors', value: overview.metrics?.memoryVectors || 0, icon: Database, color: 'text-purple-500' },
-    { name: 'Intelligence Score', value: `${overview.metrics?.intelligenceScore || 0}%`, icon: Activity, color: 'text-orange-500' },
+    { name: 'Active Swarms', value: overview.metrics?.activeSwarms || 0, icon: Layers, color: 'text-blue-500' },
+    { name: 'Agents Running', value: overview.metrics?.agentsRunning || 0, icon: Users, color: 'text-indigo-500' },
+    { name: 'Security Audits Passed', value: overview.metrics?.securityAuditsPassed || 0, icon: CheckSquare, color: 'text-green-500' },
+    { name: 'System Health', value: `${overview.metrics?.systemHealth || 0}%`, icon: Activity, color: 'text-orange-500' },
   ];
 
   return (
