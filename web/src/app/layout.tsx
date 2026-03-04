@@ -3,8 +3,8 @@ import './globals.css';
 import DashboardLayout from '../components/DashboardLayout';
 
 export const metadata: Metadata = {
-  title: 'Ruflo V3 Dashboard',
-  description: 'Enterprise AI Agent Orchestration',
+  title: 'AI Incubator Dashboard',
+  description: 'AI Incubator Platform powered by Ruflo',
 };
 
 export default function RootLayout({
