@@ -673,6 +673,25 @@ npx ruflo@latest --agent coder --task "Implement user authentication"
 npx ruflo@latest --list
 ```
 
+### Running the Web Version Locally
+
+The web frontend for Ruflo is built with Next.js and is located in the `/web` directory.
+
+To run the web version locally:
+
+```bash
+# Navigate to the web directory
+cd web
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
 ### Upgrading
 
 ```bash
