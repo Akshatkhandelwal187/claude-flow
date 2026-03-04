@@ -15,7 +15,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       {/* Sidebar */}
       <div className="w-64 bg-white border-r border-gray-200 flex-shrink-0">
         <div className="h-16 flex items-center px-6 border-b border-gray-200">
-          <span className="text-xl font-bold text-blue-600">Ruflo V3</span>
+          <span className="text-xl font-bold text-blue-600">AI Incubator</span>
         </div>
         <nav className="p-4 space-y-1">
           {navigation.map((item) => {
