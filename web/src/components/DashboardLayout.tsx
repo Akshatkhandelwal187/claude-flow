@@ -3,11 +3,9 @@ import { Home, Users, Layers, CheckSquare, Database, Settings, Shield } from 'lu
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const navigation = [
-    { name: 'Overview', href: '/', icon: Home },
-    { name: 'Agents', href: '/agents', icon: Users },
-    { name: 'Swarms', href: '/swarms', icon: Layers },
-    { name: 'Tasks', href: '/tasks', icon: CheckSquare },
-    { name: 'Memory', href: '/memory', icon: Database },
+    { name: 'Dashboard', href: '/', icon: Home },
+    { name: 'Swarm Configuration', href: '/swarms', icon: Layers },
+    { name: 'Pattern Library', href: '/memory', icon: Database },
   ];
 
   return (
@@ -36,16 +34,18 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
       {/* Main content */}
       <div className="flex-1 flex flex-col overflow-hidden">
-        <header className="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-6">
-          <h1 className="text-lg font-semibold text-gray-900">Dashboard</h1>
-          <div className="flex items-center">
+        <header className="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-6 shadow-sm">
+          <h1 className="text-lg font-semibold text-gray-900">AI Incubator Dashboard</h1>
+          <div className="flex items-center gap-4">
             <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
               System Online
             </span>
           </div>
         </header>
-        <main className="flex-1 overflow-auto p-6">
-          {children}
+        <main className="flex-1 overflow-auto p-6 bg-slate-50/50">
+          <div className="mx-auto max-w-6xl">
+            {children}
+          </div>
         </main>
       </div>
     </div>
